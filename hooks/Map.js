@@ -12,9 +12,6 @@ export default function Map(props) {
   };
 
   const container = useRef();
-  const NEXT_PUBLIC_KAKAO_KEY = process.env.NEXT_PUBLIC_KAKAO_KEY;
-
-  console.log(kakaoMap);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -28,7 +25,7 @@ export default function Map(props) {
         const center = new kakao.maps.LatLng(37.50802, 127.062835);
         const options = {
           center,
-          level: level,
+          level: 8,
         };
         const map = new kakao.maps.Map(container.current, options);
         // setMapCenter(center);

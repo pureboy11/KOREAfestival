@@ -27,12 +27,7 @@ export default function Home() {
 
   const data = festivalData.records;
   const NewData = data.filter((a) => new Date(a.축제시작일자) > today);
-  console.log({ NewData: NewData });
 
-  console.log({ newdata: NewData });
-  // console.log(festivalData);
-  // console.log(data);
-  // console.log(markerPositions);
   const [filterFestival, setFilterFestival] = useState(NewData);
 
   filterFestival.sort(function (a, b) {
