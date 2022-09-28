@@ -118,7 +118,7 @@ export default function Home() {
             ></Map>
           )}
 
-          <div className="h-[370px] overflow-auto  ">
+          <div className="h-screen overflow-auto  ">
             {viewmode ? (
               <session>
                 <div className=" grid grid-cols-4 md:grid-cols-6  h-8 text-center text-md font-bold tracking-tighter bg-violet-200">

@@ -1,6 +1,6 @@
-/* global kakao */
-
 import React, { useEffect, useState, useRef } from "react";
+
+/* global kakao */
 
 export default function Map(props) {
   const { markerPositions, size } = props;
@@ -30,38 +30,6 @@ export default function Map(props) {
         const map = new kakao.maps.Map(container.current, options);
         // setMapCenter(center);
         setKakaoMap(map);
-
-        function zoomIn() {
-          const level = map.getLevel();
-          map.setLevel(level - 1);
-          displayLevel();
-        }
-        function zoomOut() {
-          // 현재 지도의 레벨을 얻어옵니다
-          var level = map.getLevel();
-
-          // 지도를 1레벨 올립니다 (지도가 축소됩니다)
-          map.setLevel(level + 1);
-
-          // 지도 레벨을 표시합니다
-          displayLevel();
-        }
-
-        function displayLevel() {
-          var levelEl = document.getElementById("maplevel");
-          levelEl.innerHTML =
-            "현재 지도 레벨은 " + map.getLevel() + " 레벨 입니다.";
-        }
-
-        // var mapTypeControl = new window.kakao.maps.MapTypeControl();
-
-        // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-        // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-        // map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-        // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-        const zoomControl = new window.kakao.maps.ZoomControl();
-        map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
       });
     };
   }, [container]);
