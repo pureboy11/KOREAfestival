@@ -76,7 +76,7 @@ export default function Home() {
 
   const handleMapicon = () => {};
 
-  console.log(hotelInfo);
+  // console.log(hotelInfo);
 
   return (
     <>
@@ -238,10 +238,7 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 p-4 md:grid-cols-2 m-auto">
                   {filterFestival.map((festivalList, id) => (
-                    <div
-                      key={festivalList.id}
-                      className="w-full tracking-tighter "
-                    >
+                    <div key={id} className="w-full tracking-tighter ">
                       <section className="text-gray-600 body-font">
                         <div className="container px-5 mx-auto ">
                           <div className="">
@@ -284,9 +281,9 @@ export default function Home() {
                                           <svg
                                             fill="none"
                                             stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
                                             className="w-4 h-4 ml-2"
                                             viewBox="0 0 24 24"
                                           >
