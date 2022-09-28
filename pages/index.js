@@ -305,6 +305,7 @@ export default function Home() {
                                     width="300%"
                                     height="300%"
                                     objectFit="cover"
+                                    alt="festivalImg"
                                   />
                                 </div>
                               </div>
