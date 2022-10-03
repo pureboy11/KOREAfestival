@@ -43,7 +43,7 @@ export default function Home() {
 
   // console.log(listOfDate);
 
-  const [mapSize, setMapSize] = useState([1535, 250]);
+  const [mapSize, setMapSize] = useState([430, 250]);
   const [hotelInfo, setHotelInfo] = useState(false);
   const [transportationInfo, setTransportationInfo] = useState(false);
   const [foodInfo, setFoodInfo] = useState(false);
@@ -81,14 +81,14 @@ export default function Home() {
   return (
     <>
       <TitleManager pageTitle="home" />
-      <section className="main container mx-auto relative overflow-hidden ">
+      <section className="main container mx-auto relative ">
         <button
           className="bg-slate-200 p-1 rounded-lg border border-slate-300 "
           onClick={handleviewmode}
         >
           toggle
         </button>
-        <div className="border border-slate-300">
+        <div className="">
           <div className="absolute right-5 gap-3 grid grid-rows-3 mt-3">
             <button
               className="z-10 w-14 h-14 bg-sky-300 rounded-lg border-2 border-gray-100 shadow-xl"
@@ -111,14 +111,27 @@ export default function Home() {
           </div>
           {visible && (
             <Map
-              className="align-middle justify-center mx-auto "
+              className="align-middle justify-center mx-auto w-100 h-100"
               markerPositions={markerPositions}
               size={mapSize}
               level={8}
             ></Map>
           )}
+          {hotelInfo ? (
+            <div className="absolute top-72 z-10 bg-slate-100 w-full h-80">
+              <div> 숙소 정보</div>
+            </div>
+          ) : transportationInfo ? (
+            <div className="absolute top-72 z-10 bg-slate-100 w-full h-80">
+              <div> 교통 정보</div>
+            </div>
+          ) : foodInfo ? (
+            <div className="absolute top-72 z-10 bg-slate-100 w-full h-80">
+              <div> 식당 정보</div>
+            </div>
+          ) : null}
 
-          <div className="h-screen overflow-auto  ">
+          <div className="h-screen ">
             {viewmode ? (
               <session>
                 <div className=" grid grid-cols-4 md:grid-cols-6  h-8 text-center text-md font-bold tracking-tighter bg-violet-200">
@@ -139,20 +152,6 @@ export default function Home() {
                     평생 저장!
                   </span>
                 </div>
-                {hotelInfo ? (
-                  <div className="absolute top-56 bg-slate-100 w-full h-80">
-                    <div> 숙소 정보</div>
-                  </div>
-                ) : transportationInfo ? (
-                  <div className="absolute top-56 bg-slate-100 w-full h-80">
-                    <div> 교통 정보</div>
-                  </div>
-                ) : foodInfo ? (
-                  <div className="absolute top-56 bg-slate-100 w-full h-80">
-                    <div> 식당 정보</div>
-                  </div>
-                ) : null}
-
                 {filterFestival.map((festivalList, id) => (
                   <div
                     key={festivalList.id}
@@ -185,7 +184,7 @@ export default function Home() {
 
                     <div className="bg-white-100 dark:bg-gray-700 my-auto">
                       <button
-                        className="bg-green-100 dark:bg-emerald-900 border border-slate-200 dark:border-slate-700 align-middle items-end w-20 text-xs"
+                        className="bg-green-100 dark:bg-emerald-900 overflow-hidden  border border-slate-200 dark:border-slate-700 align-middle items-end w-20 text-xs"
                         onClick={() => {
                           let location = [
                             [festivalList.위도, festivalList.경도],
@@ -244,7 +243,7 @@ export default function Home() {
                           <div className="">
                             <div className="p-4 md:w-full">
                               <div
-                                className="relative overflow-hidden flex h-[160px] border rounded-lg shadow-md border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col hover:scale-105 ease-in hover:border-pink-100 duration-300 cursor-pointer"
+                                className="relative flex h-[160px] overflow-hidden border rounded-lg shadow-md border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col hover:scale-105 ease-in hover:border-pink-100 duration-300 cursor-pointer"
                                 onClick={() => {
                                   let location = [
                                     [festivalList.위도, festivalList.경도],
@@ -295,12 +294,12 @@ export default function Home() {
                                   </div>
                                 </div>
 
-                                <div className="absolute -top-5 -right-10 w-36 h-36 md:w-48 md:h-48 overflow-hidden rounded-full shadow-md ">
+                                <div className="absolute -top-5 -right-10 overflow-hidden rounded-full shadow-md ">
                                   <Image
                                     className=""
                                     src="/정읍꽃.jpg"
-                                    width="300%"
-                                    height="300%"
+                                    width="100%"
+                                    height="100%"
                                     objectFit="cover"
                                     alt="festivalImg"
                                   />
@@ -315,7 +314,7 @@ export default function Home() {
                 </div>
               </div>
             )}
-            <div className="flex flex-col items-center justify-center py-2">
+            <div className="">
               <Sidebar />
             </div>
           </div>

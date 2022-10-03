@@ -7,7 +7,7 @@ export default function Sidebar() {
     <>
       {showSidebar ? (
         <button
-          className="flex text-4xl text-white items-center cursor-pointer fixed right-10 top-6 z-50"
+          className="flex text-4xl text-white items-center cursor-pointer fixed right-4 top-4 z-50"
           onClick={() => setShowSidebar(!showSidebar)}
         >
           x
@@ -15,7 +15,7 @@ export default function Sidebar() {
       ) : (
         <svg
           onClick={() => setShowSidebar(!showSidebar)}
-          className="fixed text-slate-500 z-30 flex items-center cursor-pointer right-10 top-6"
+          className="fixed text-slate-500 z-30 flex items-center cursor-pointer right-4 top-4"
           viewBox="0 0 100 80"
           width="24"
           height="24"
@@ -27,35 +27,25 @@ export default function Sidebar() {
       )}
 
       <div
-        className={`top-0 right-0 w-[35vw] bg-blue-600  p-7 pl-10 text-white fixed h-full z-40  ease-in-out duration-300 ${
+        className={`top-0 right-0 w-[50vw] bg-gray-400 p-2  text-white fixed h-full z-40  ease-in-out duration-300 ${
           showSidebar ? "translate-x-0 " : "translate-x-full"
         }`}
       >
-        <h3 className="mt-5 text-4xl font-semibold text-white">
-          Festival Manager
-        </h3>
+        <h3 className="mt-7 text-md font-semibold pl-1 mb-5">User ID 님</h3>
 
-        <div className="border border-white grid grid-cols-4 m-5 ">
-          <div className="flex flex-auto bg-yellow-300 gap-2 mr-1 text-center">
-            <h2 className="font-extrabold border border-slate-800 p-5">
-              Music Festival
-            </h2>
-          </div>
-          <div className="flex flex-auto bg-yellow-300 gap-2 mr-1 text-center">
-            <h2 className="font-extrabold border border-slate-800 p-5">
-              Local Festival
-            </h2>
-          </div>
-          <div className="flex flex-auto bg-yellow-300 gap-2 mr-1 text-center">
-            <h2 className="font-extrabold border border-slate-800 p-5">
-              Food Festival
-            </h2>
-          </div>
-          <div className="flex flex-auto bg-yellow-300 gap-2 text-center">
-            <h2 className="font-extrabold border border-slate-800 p-5">
-              Activity Festival
-            </h2>
-          </div>
+        <div className="grid grid-cols-4  text-[10px]">
+          <button className="border border-slate-300 rounded-md bg-green-500 p-1 mr-1 mx-auto">
+            Music Festival
+          </button>
+          <button className="border border-slate-300 rounded-md bg-green-500 p-1 mr-1 mx-auto">
+            Local Festival
+          </button>
+          <button className="border border-slate-300 rounded-md bg-green-500 p-1 mr-1 mx-auto">
+            Food Festival
+          </button>
+          <button className="border border-slate-300 rounded-md bg-green-500 p-1 mr-1 mx-auto">
+            Activity Festival
+          </button>
         </div>
         <div className=" h-60 m-5 justify-center items-center flex flex-wrap">
           <button className="bg-green-300 w-full p-4 text-center my-3">
