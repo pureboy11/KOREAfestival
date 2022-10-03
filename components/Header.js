@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Darkmode from "./darkmode";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Header(props) {
   const [festivalSearch, setFestivalSearch] = useState();
@@ -12,15 +12,14 @@ export default function Header(props) {
     <>
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap px-5 pt-5 items-center md:mb-3">
-          <a
-            href="/"
-            className="text-xl font-bold sm:text-3xl mb-2 md:mb-0 mr-5 flex"
-          >
-            <div className="bg-green-300 w-10 h-10 rounded-full"></div>
-            <h1 className="text-xl font-extrabold tracking-tighter text-green-900/80 hover:text-slate-800 my-auto ml-1">
-              오축
-            </h1>
-          </a>
+          <Link href="/" as={"/"}>
+            <a className="text-xl font-bold sm:text-3xl mb-2 md:mb-0 mr-5 flex">
+              <div className="bg-green-300 w-10 h-10 rounded-full"></div>
+              <h1 className="text-xl font-extrabold tracking-tighter text-green-900/80 hover:text-slate-800 my-auto ml-1">
+                오축
+              </h1>
+            </a>
+          </Link>
           <input
             onChange={onChange}
             id="festivalInput"
